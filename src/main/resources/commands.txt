@@ -1,5 +1,10 @@
 docker build -t j2eeexpert/springbootdebug .
 docker run -p 8080:8080 j2eeexpert/springbootdebug --name springbootdebug-image
 
+docker run -p 8000:8000 j2eeexpert/springbootdebug --name springbootdebug-image
+
+
 docker image ls
 docker container ls
+
+https://medium.com/swlh/remote-debugging-a-java-application-running-in-docker-container-with-intellij-idea-efe54cd77f02

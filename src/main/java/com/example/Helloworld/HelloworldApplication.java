@@ -21,6 +21,7 @@ public class HelloworldApplication
 	@RequestMapping(value = "/")
 	public String hello()
 	{
+		System.out.println("Hello !!");
 		return "Hello World";
 	}
 
