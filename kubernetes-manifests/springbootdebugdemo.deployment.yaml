@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-debug-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-debug-demo
+  template:
+    metadata:
+      labels:
+        app: spring-boot-debug-demo
+    spec:
+      containers:
+      - name: server
+        image: spring-boot-debug-demo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        # This environment variable enables debugging support for the container.
+        # Remove this to disable the debug build.
+        - name: JAVA_TOOL_OPTIONS
+          value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 5
