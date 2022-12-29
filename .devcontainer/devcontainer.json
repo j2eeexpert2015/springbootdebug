@@ -1,0 +1,8 @@
+{
+  "name": "Existing Dockerfile",
+  "build": {
+    "context": "..",
+    "dockerfile": "../Dockerfile"
+  },
+  "appPort": [  "8081:8080" ]
+}
