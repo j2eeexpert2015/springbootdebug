@@ -15,6 +15,7 @@ spec:
       containers:
       - name: server
         image: spring-boot-debug-demo
+        imagePullPolicy: IfNotPresent  # Use local image if available
         ports:
         - containerPort: 8080
         env:

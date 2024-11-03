@@ -4,6 +4,8 @@ metadata:
   name: spring-boot-debug-demo-external
 spec:
   type: LoadBalancer
+  #type: NodePort
+
   selector:
     app: spring-boot-debug-demo
   ports:
